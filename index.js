@@ -2,7 +2,7 @@ require('dotenv').config() // Load .env file
 const axios = require('axios')
 const Discord = require('discord.js')
 const { Client, Intents, find } = require('discord.js')
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES] })
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES] })
 
 function getPrices() {
 
@@ -21,15 +21,7 @@ function getPrices() {
                 }]
             })
 
-            /* client.user.setPresence({
-                activities: {
-                    // Example: "Watching -5,52% | BTC"
-                    name: `${priceChange.toFixed(2)}% | ${symbol.toUpperCase()}`,
-                    type: 3 // Use activity type 3 which is "Watching"
-                }
-            }) */
-
-            client.guilds.cache.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${(symbol).toUpperCase()} ${process.env.SYMBOL}${(currentPrice).toLocaleString().replace(/,/g, process.env.THOUSAND_SEPARATOR)}`)
+            client.guilds.cache.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`${(symbol).toUpperCase()} $${(currentPrice).toLocaleString().replace(/,/g, process.env.THOUSAND_SEPARATOR)}`)
 
             console.log('Updated price to', currentPrice)
         }
@@ -45,7 +37,7 @@ client.on('ready', () => {
 
     getPrices() // Ping server once on startup
     // Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
-    setInterval(getPrices, Math.max(1, process.env.PING_FREQUENCY || 1) * 60 * 1000)
+    setInterval(getPrices, Math.max(1, process.env.PING_FREQUENCY || 2) * 60 * 1000)
 })
 
 // Login to Discord
