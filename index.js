@@ -21,7 +21,7 @@ function getPrices() {
                 }]
             })
 
-            client.guilds.cache.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`$${(symbol).toUpperCase()}" | " $${(currentPrice).toLocaleString().replace(/,/g, process.env.THOUSAND_SEPARATOR)}`)
+            client.guilds.cache.find(guild => guild.id === process.env.SERVER_ID).me.setNickname(`$${(symbol).toUpperCase()} | $${(currentPrice).toLocaleString().replace(/,/g, process.env.THOUSAND_SEPARATOR)}`)
 
             console.log('Updated price to', currentPrice)
         }
