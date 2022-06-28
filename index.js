@@ -17,7 +17,7 @@ function getPrices() {
             let northEastArrow = '\u2197'
             client.user.setPresence({
                 activities: [{
-                    name: `24h Price Change: ${priceChange.toFixed(2)}%`
+                    name: `24h: ${priceChange.toFixed(2)}%`
                 }]
             })
 
