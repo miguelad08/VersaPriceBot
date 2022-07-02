@@ -17,7 +17,7 @@ function getPrices() {
             let northEastArrow = '\u2197'
             client.user.setPresence({
                 activities: [{
-                    name: `24h: ${priceChange.toFixed(2)}%`
+                    name: "1 xVERSA ≈ 1.065 VERSA"//`24h: ${priceChange.toFixed(2)}%`
                 }]
             })
 
@@ -37,7 +37,7 @@ client.on('ready', () => {
 
     getPrices() // Ping server once on startup
     // Ping the server and set the new status message every x minutes. (Minimum of 1 minute)
-    setInterval(getPrices, Math.max(1, process.env.PING_FREQUENCY || 2) * 60 * 1000)
+    setInterval(getPrices, Math.max(1, process.env.PING_FREQUENCY || 1) * 60 * 1000)
 })
 
 // Login to Discord
