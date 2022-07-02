@@ -17,7 +17,8 @@ function getPrices() {
             let northEastArrow = '\u2197'
             client.user.setPresence({
                 activities: [{
-                    name: "1 xVERSA ≈ 1.065 VERSA"//`24h: ${priceChange.toFixed(2)}%`
+                    name: "1 xVERSA ≈ 1.065 VERSA",//`24h: ${priceChange.toFixed(2)}%`
+                    type: " "
                 }]
             })
 
