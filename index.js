@@ -18,7 +18,7 @@ function getPrices() {
             client.user.setPresence({
                 activities: [{
                     name: "1 xVERSA ≈ 1.065 VERSA",//`24h: ${priceChange.toFixed(2)}%`
-                    type: " "
+                    type: "WATCHING"
                 }]
             })
 
