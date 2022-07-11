@@ -14,10 +14,10 @@ function getPrices() {
             let currentPrice = res.data[0].current_price || 0 // Default to zero
             let priceChange = res.data[0].price_change_percentage_24h || 0 // Default to zero
             let symbol = res.data[0].symbol || '?'
-            let northEastArrow = '\u2197'
+            // Unix code for arrow pointing up and to the right  let northEastArrow = '\u2197'
             client.user.setPresence({
                 activities: [{
-                    name: "1 xVERSA ≈ 1.071 VERSA",//`24h: ${priceChange.toFixed(2)}%`
+                    name: "1 xVERSA ≈ 1.077 VERSA",//`24h: ${priceChange.toFixed(2)}%`
                     type: "WATCHING"
                 }]
             })
