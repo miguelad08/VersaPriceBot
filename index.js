@@ -17,7 +17,7 @@ function getPrices() {
             // Unix code for arrow pointing up and to the right  let northEastArrow = '\u2197'
             client.user.setPresence({
                 activities: [{
-                    name: "1 xVERSA ≈ 1.100 VERSA",//`24h: ${priceChange.toFixed(2)}%`
+                    name: "1 xVERSA ≈ 1.103 VERSA",//`24h: ${priceChange.toFixed(2)}%`
                     type: "WATCHING"
                 }]
             })
